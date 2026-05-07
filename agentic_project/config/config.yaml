@@ -1,0 +1,34 @@
+agentic_framework: langchain
+agent_name: Apigee Proxy Testing Agent
+version: 1.0.0
+llm:
+  provider: vertex_ai
+  model_name: gemini-2.5-flash
+  project: gen-ai-poc-onboarding
+  location: us-central1
+security:
+  auth_type: api_key
+  encryption_enabled: true
+  content_filtering_enabled: true
+  rate_limit_rpm: 60
+error_handling:
+  retry_attempts: 3
+  retry_strategy: exponential
+  timeout_seconds: 30
+  circuit_breaker_enabled: false
+input_output_validation:
+  input_validation_enabled: true
+  output_validation_enabled: true
+  validation_mode: strict
+observability:
+  logging_level: INFO
+  metrics_enabled: true
+  tracing_enabled: false
+rag:
+  enabled: true
+  vector_db: chromadb
+  embedding_model: default # Using default for simplicity as no specific one was mentioned
+  collection_name: knowledge_base
+deployment:
+  platform: gcp
+  region: us-central1

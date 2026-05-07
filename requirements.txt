@@ -1,0 +1,12 @@
+fastapi
+uvicorn[standard]
+pydantic
+PyYAML
+google-cloud-aiplatform
+python-dotenv
+chromadb
+langchain-core
+langchain-google-vertexai
+python-multipart
+google-generativeai
+pdfplumber
